@@ -14,13 +14,13 @@ var articles={
     },
     'article-two': {
         title:"article_two",
-        heading:"Article One",
+        heading:"Article Two",
         content:`<p>this the paragraph of article one.</p>
         <p>this the paragraph of article one.</p>
     `},
     'article-three': {
         title:"article_three",
-        heading:"Article One",
+        heading:"Article Three",
         content:`<p>this the paragraph of article one.</p>
         <p>this the paragraph of article one.</p>`
     }   
