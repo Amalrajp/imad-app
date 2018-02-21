@@ -39,14 +39,14 @@ function createTemplate(data){
             <link href="/ui/style.css" rel="stylesheet" />
         </head>
         <body>
-            <div>
+            <div class="center">
                         <a href="/">home</a>
             </div>
-            <div>
-                <h1>
+            <div class="center">
+                <h1 class="center text-big bold">
                     ${heading}
                 </h1>
-                <p>
+                <p class="center">
                     ${content}
                 </p>
             </div>
