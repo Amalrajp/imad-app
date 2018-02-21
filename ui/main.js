@@ -1,7 +1,7 @@
 console.log('Loaded!');
 
 var thavala=document.getElementById("thavala");
-var marginLeft=0;
+var marginLeft=1;
 function moveRight(){
     marginLeft=marginLeft*2;
     thavala.style.marginLeft=marginLeft+"px";
