@@ -5,23 +5,20 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 var articles={
-    'article-one':
-    {
+    'article-one': {
         title:"article_one",
         heading:"Article One",
         content:`<p>this the paragraph of article one.</p>
         <p>this the paragraph of article one.</p>
         <p>this the paragraph of article one.</p>`
     },
-    'article-two':
-    {
+    'article-two': {
         title:"article_two",
         heading:"Article One",
         content:`<p>this the paragraph of article one.</p>
         <p>this the paragraph of article one.</p>
     `},
-    'article-three':
-    {
+    'article-three': {
         title:"article_three",
         heading:"Article One",
         content:`<p>this the paragraph of article one.</p>
@@ -69,10 +66,15 @@ app.get('/ui/style.css', function (req, res) {
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
+app.get('/article-one', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'article1.html'));
+});
+/*
 app.get('/:articleName', function (req, res) {
   var articleName=req.prams.articleName;  
   res.send(createTemplate(articles[articleName]));
 });
+*/
 
 
 // Do not change port, otherwise your app won't run on IMAD servers
