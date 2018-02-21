@@ -8,5 +8,5 @@ function moveRight(){
 }
 thavala.onclick=function()
     {
-        var slide=setIntervel(moveRight,1);
+        var slide=setInterval(moveRight,1);
     };
