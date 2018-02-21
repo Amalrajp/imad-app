@@ -1,4 +1,6 @@
 console.log('Loaded!');
 
-thavala=document.getElementById("thavala");
-thavala.onclick=thavala.leftMargin="100px";
+var thavala=document.getElementById("thavala");
+thavala.onclick=function(){
+thavala.style.marginLeft="100px";
+}
