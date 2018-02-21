@@ -36,8 +36,7 @@ function createTemplate(data){
             <title>
                 ${title}
             </title>
-            <style src="ui/style.css">
-            </style>
+            <link href="/ui/style.css" rel="stylesheet" />
         </head>
         <body>
             <div>
