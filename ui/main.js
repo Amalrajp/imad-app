@@ -6,5 +6,5 @@ btn.onclick=function()
 {
     var span=document.getElementById("count");
   span.innerHtml=counter.toString();
-  counter+=1;
+  counter=counter+1;
 };
