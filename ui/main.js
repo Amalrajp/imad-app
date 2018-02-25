@@ -1,12 +1,9 @@
-console.log('Loaded!');
+var counter=0;
+var span=document.getElementById("count");
+var btn=document.getElementById("btn");
 
-var thavala=document.getElementById("thavala");
-var marginLeft=1;
-function moveRight(){
-    marginLeft=marginLeft*1.01;
-    thavala.style.marginLeft=marginLeft+"px";
-}
-thavala.onclick=function()
-    {
-        var slide=setInterval(moveRight,1);
-    };
+btn.onclick=function()
+{
+  span.innerHtml=counter.toString();
+  counter+=1;
+};
