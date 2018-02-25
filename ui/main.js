@@ -15,7 +15,7 @@ btn.onclick=function()
             }
         }
     }
-    counter=counter+1;
+
 
 
     request.open('GET','http://amalrajp83.imad.hasura-app.io/counter')
