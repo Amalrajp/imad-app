@@ -1,11 +1,23 @@
-var counter=0;
+
 
 var btn=document.getElementById("btn");
-    var span=document.getElementById("count");
-
+   
 btn.onclick=function()
-{  counter=counter+1;
+{  
+    var request=new XMLHttpRequest();
+    request.onreadystatechange=function(){
+        if (request.resdyState==XMLHttpRequest.DONE){
+            if(request.state==200){
+                var counter=request.responseText;
+                var span=document.getElementById("count");
+                span.innerHTML=counter;
+
+            }
+        }
+    }
+    counter=counter+1;
 
 
-    span.innerHTML=counter;
+    request.open('GET','http://amalrajp83.imad.hasura-app.io/counter')
+    request.send(null);
 };
