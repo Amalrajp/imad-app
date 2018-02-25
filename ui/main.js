@@ -44,7 +44,7 @@ submit.onclick=function(){
     };
    
 
-    request.open('GET','http://amalrajp83.imad.hasura-app.io/submit-name?name='+name1);
+    request.open('GET','http://amalrajp83.imad.hasura-app.io/submit-name?name='+name1,true);
     request.send(null);
     
 
