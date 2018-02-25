@@ -5,7 +5,7 @@ body {
 }
 
 .center {
-   
+   text-align: center;
 }
 
 .text-big {
@@ -20,7 +20,7 @@ body {
     height: 200px;
 }
 .container{
-    margin:30px 205%;
+    margin:30px 20%;
     
     width:60%;
     
