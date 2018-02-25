@@ -9,7 +9,7 @@ body {
 }
 
 .text-big {
-    font-size: 300%;
+    font-size: 200%;
 }
 
 .bold {
@@ -21,6 +21,7 @@ body {
 }
 .container{
     text-align:center;
+    width:75%;
     
 }
 
