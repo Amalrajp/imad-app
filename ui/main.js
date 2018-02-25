@@ -15,10 +15,17 @@ btn.onclick=function()
 
             }
         }
-    }
+    };
 
 
 
-    request.open('GET','http://amalrajp83.imad.hasura-app.io/counter')
+    request.open('GET','http://amalrajp83.imad.hasura-app.io/counter');
     request.send(null);
 };
+var names=['name1','name2','name3'];
+var list='';
+for(i=0;i<names.length;i++){
+    list=list+'<li>'+names[i]+'</li>';
+}
+var namelist=document.getElementById("namelist");
+namelist.innerHTML=list;
