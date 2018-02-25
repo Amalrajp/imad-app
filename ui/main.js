@@ -8,6 +8,7 @@ btn.onclick=function()
     request.onreadystatechange=function(){
         if (request.readyState==XMLHttpRequest.DONE){
             if(request.state==200){
+                Log.console("y");
                 var counter=request.responseText;
                 var span=document.getElementById("count");
                 span.innerHTML=counter;
