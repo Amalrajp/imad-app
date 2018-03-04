@@ -102,9 +102,10 @@ app.get('/test-db', function (req, res) {
         }
     });
 });
-app.get('/:articleName', function (req, res) {
-  var articleName=req.params.articleName;  
-  res.send(createTemplate(articles[articleName]));
+app.get('/articles/:articleName', function (req, res) {
+  var articleName=req.params.articleName; 
+  pool.query("select * from srticle where title='"+articleName+"'");
+  res.send(createTemplate());
 });
 
 // Do not change port, otherwise your app won't run on IMAD servers
