@@ -14,13 +14,7 @@ var config={
     password:process.env.DB_PASSWORD
 };
 var articles={
-    'article-one': {
-        title:"article_one",
-        heading:"Article One",
-        content:`<p>this the paragraph of article one.</p>
-        <p>this the paragraph of article one.</p>
-        <p>this the paragraph of article one.</p>`
-    },
+    
     'article-two': {
         title:"article_two",
         heading:"Article Two",
