@@ -33,6 +33,7 @@ function createTemplate(data){
     var title=data.title;
     var heading=data.heading;
     var content=data.content;
+    var date=data.dare;
     var htmlTemplate=`
         <html>
         <head>
@@ -43,13 +44,16 @@ function createTemplate(data){
         </head>
         <body>
             <div class="center">
-                        <a href="/">home</a>
+                        <a href="/">Home</a>
             </div>
+            <hr>
+            
             <div class="center">
-                <h1 class="center text-big bold">
+                <h1>
                     ${heading}
                 </h1>
-                <p class="center">
+                ${date}
+                <p>
                     ${content}
                 </p>
             </div>
