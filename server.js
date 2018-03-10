@@ -64,7 +64,7 @@ var names=[];
 
 function hash(input,salt){
     var hashedpass = crypto.pbkdf2Sync(input, salt, 100000, 64, 'sha512');
-    return hashedpass.toString('hex');
+    return ["pbkdf2Sync","100000",salt,hashedpass.toString('hex')].join('$');
 }
 
 app.get('/hash/:input',function(req,res){
