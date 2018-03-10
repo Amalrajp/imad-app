@@ -77,7 +77,9 @@ app.get('/hash/:input',function(req,res){
 app.get('/create-user',function(req,res){
     var username=req.body.username;
     var password=req.body.password;
-    pool.query('Insert into user (username,password) values($1,$2)',[username,password],function(req,res){
+    var salt='mysalt';
+    var dbstr=hash(password,salt);
+    pool.query('Insert into user (username,password) values($1,$2)',[username,dbstr],function(req,res){
         if(err)
             res.status(500).send(err.toString());
         else{
