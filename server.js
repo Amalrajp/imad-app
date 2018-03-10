@@ -14,22 +14,7 @@ var config={
     port:"5432",
     password:process.env.DB_PASSWORD
 };
-var articles={
-    
-    'article-two': {
-        title:"article_two",
-        heading:"Article Two",
-        content:`<p>this the paragraph of article one.</p>
-        <p>this the paragraph of article one.</p>
-    `},
-    'article-three': {
-        title:"article_three",
-        heading:"Article Three",
-        content:`<p>this the paragraph of article one.</p>
-        <p>this the paragraph of article one.</p>`
-    }   
 
-};
 function createTemplate(data){    
     var title=data.title;
     var heading=data.heading;
