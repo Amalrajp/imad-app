@@ -83,8 +83,8 @@ function hash(input,salt){
 }
 
 app.get('/hash/:input',function(req,res){
-    hp=hash(req.params.input,"this-is-salt");
-    res.send(hs);
+    var hp=hash(req.params.input,"this-is-salt");
+    res.send(hp);
 });
 
 app.get('/submit-name',function(req,res){
