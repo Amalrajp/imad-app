@@ -3,8 +3,7 @@
 
 var submit=document.getElementById("submit_btn");
 submit.onclick=function(){
-    var username=document.getElementById("username").value;
-    var password=document.getElementById("password").value;
+    
 
     
     var request=new XMLHttpRequest();
@@ -17,6 +16,8 @@ submit.onclick=function(){
             else if(request.status===403) alert("something went wrong");
         }
     };
+    var username=document.getElementById("username").value;
+    var password=document.getElementById("password").value;
     console.log(username);
     request.open('POST','http://amalrajp83.imad.hasura-app.io/login',true);
     request.send(JSON.stringify({usernme:username,password:password}));
