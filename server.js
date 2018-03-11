@@ -4,10 +4,18 @@ var path = require('path');
 var Pool=require('pg').Pool;
 var crypto = require('crypto');
 var bodyParser = require('body-parser');
+var session = require('express-session');
 
 var app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
+
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: true,maxAge:1000*60*60*30*24  }
+}));
 
 var config={
     user:"amalrajp83",
@@ -74,7 +82,7 @@ app.get('/hash/:input',function(req,res){
     res.send(hp);
 });
 
-app.get('/create-user',function(req,res){
+app.post('/create-user',function(req,res){
     var username=req.body.username;
     var password=req.body.password;
     var salt='mysalt';
@@ -84,6 +92,29 @@ app.get('/create-user',function(req,res){
             res.status(500).send(err.toString());
         else{
             res.send("user created successfully ");
+        }
+    });
+});
+
+app.post('/login',function(req,res){
+    var username=req.body.username;
+    var password=req.body.password;
+    pool.query('Select * from user where username=$1',[username],function(req,res){
+        if(err)
+            res.status(500).send(err.toString());
+        else{
+            if(res.rows.length===0){
+                res.status(403).send('username/password is invalid');
+            }
+            else{
+                var dbstr=res.rows.password;
+                var salt=dbstr.split('$')[2];
+                var hashedpassword=hash(password,salt);
+                if(hasedpassword===dbstr){
+                    res.send("credentials are correct");
+                }
+                else res.status(403).send('username/password is invalid');
+            }       
         }
     });
 });
@@ -106,15 +137,7 @@ app.get('/ui/main.js', function (req, res) {
 
 var pool=new Pool(config);
 
-app.get('/test-db', function (req, res) {
-    pool.query('SELECT * from article', (err, result)=> {
-        if(err)
-            res.status(500).send(err.toString());
-        else{
-            res.send(JSON.stringify(result.rows));
-        }
-    });
-});
+
 app.get('/articles/:articleName', function (req, res) {
   var articleName=req.params.articleName; 
   pool.query("select * from article where title=$1",[articleName],(err,result)=>{
