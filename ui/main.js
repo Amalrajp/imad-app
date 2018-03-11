@@ -19,7 +19,7 @@ submit.onclick=function(){
     };
    
 
-    request.open('GET','http://amalrajp83.imad.hasura-app.io/login',true);
+    request.open('POST','http://amalrajp83.imad.hasura-app.io/login',true);
     request.send(JSON.stringify({usernme:username,password:password}));
     
 
