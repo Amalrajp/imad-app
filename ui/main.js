@@ -20,7 +20,7 @@ submit.onclick=function(){
     var password=document.getElementById("password").value;
     console.log(username);
     request.open('POST','http://amalrajp83.imad.hasura-app.io/login',true);
-    request.setRequestHeader("Content-Type",'application/json')
+    request.setRequestHeader("Content-Type",'application/json');
     request.send(JSON.stringify({usernme:username,password:password}));
     
 
