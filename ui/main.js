@@ -13,7 +13,7 @@ submit.onclick=function(){
             
             else if(request.status===403) alert("username/password is invalid");
             
-            else if(request.status===403) alert("something went wrong");
+            else if(request.status===500) alert("something went wrong");
         }
     };
     var username=document.getElementById("username").value;
