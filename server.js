@@ -87,7 +87,7 @@ app.post('/create-user',function(req,res){
     var password=req.body.password;
     var salt='mysalt';
     var dbstr=hash(password,salt);
-    pool.query('Insert into user (username,password) values($1,$2)',[username,dbstr],function(req,res){
+    pool.query('Insert into user (username,password) values($1,$2)',[username,dbstr],function(err,result){
         if(err)
             res.status(500).send(err.toString());
         else{
@@ -99,7 +99,7 @@ app.post('/create-user',function(req,res){
 app.post('/login',function(req,res){
     var username=req.body.username;
     var password=req.body.password;
-    pool.query('Select * from user where username=$1',[username],function(err,result){
+    pool.query('Select * from "user" where "username"=$1',[username],function(err,result){
         if(err)
             res.status(500).send(err.toString());
         else{
