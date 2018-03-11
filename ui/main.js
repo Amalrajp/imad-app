@@ -17,8 +17,7 @@ submit.onclick=function(){
             else if(request.status===403) alert("something went wrong");
         }
     };
-   
-
+    console.log(username);
     request.open('POST','http://amalrajp83.imad.hasura-app.io/login',true);
     request.send(JSON.stringify({usernme:username,password:password}));
     
