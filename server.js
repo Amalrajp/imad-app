@@ -98,8 +98,10 @@ app.post('/create-user',function(req,res){
 
 app.post('/login', function (req,res) {
         
-   var username="user"
-   var password="pass"
+
+    var username=req.body.username;
+    var password=req.body.password;
+   
     console.log(username+' server');
     pool.query('Select * from "user" where "username"=$1',[username],function(err,result){
         if(err)
