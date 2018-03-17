@@ -81,7 +81,7 @@ app.get('/hash/:input',function(req,res){
     var hp=hash(req.params.input,"this-is-salt");
     res.send(hp);
 });
-
+var pool=new Pool(config);
 app.post('/create-user',function(req,res){
     var username=req.body.username;
     var password=req.body.password;
@@ -139,7 +139,7 @@ app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
 
-var pool=new Pool(config);
+
 
 
 app.get('/articles/:articleName', function (req, res) {
