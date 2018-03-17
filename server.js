@@ -99,7 +99,7 @@ app.post('/create-user',function(req,res){
 
 app.post('/log-in',function(req,res) {
         
-
+    console.log(hi);
     var username=req.body.username;
     var password=req.body.password;
    
