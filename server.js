@@ -97,7 +97,7 @@ app.post('/create-user',function(req,res){
     });
 });
 
-app.post('/avd', function (req,res) {
+app.post('/log-in',function(req,res) {
         
 
     var username=req.body.username;
