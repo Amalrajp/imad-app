@@ -8,8 +8,8 @@ submit.onclick=function(){
     
     var request=new XMLHttpRequest();
     request.onreadystatechange=function(){
-        if (request.readyState==XMLHttpRequest.DONE){
-            if(request.status==200) alert("logged in successfully");
+        if (request.readyState===XMLHttpRequest.DONE){
+            if(request.status===200) alert("logged in successfully");
             
             else if(request.status===403) alert("username/password is invalid");
             
